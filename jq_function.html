@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>jQuery Function</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="jq_style.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#hide").click(function(){
+                    $("#firstParagraph").hide();
+                });
+                $("#show").click(function(){
+                    $("#firstParagraph").show();
+                });
+                $('#toggle').click(function(){
+                    $('#firstParagraph').toggle();
+                });
+
+                $('#slideup').click(function(){
+                    $('#secondP').slideUp('slow');
+                });
+
+                $('#slidedown').click(function(){
+                    $('#secondP').slideDown('slow');
+                });
+
+                $('#slidetoggle').click(function(){
+                    $('#secondP').slideToggle();
+                });
+
+                $('#fadeout').click(function(){
+                    $('#box1').fadeOut(1000);
+                    $('#box2').fadeOut(2000);
+                    $('#box3').fadeOut(3000);
+                    $('#box4').fadeOut(4000);
+                });
+
+
+                $('#fadein').click(function(){
+                    $('#box1').fadeIn();
+                    $('#box2').fadeIn('slow');
+                    $('#box3').fadeIn(3000);
+                    $('#box4').fadeIn(9000);
+                });
+
+                $('#addclass').click(function(){
+                    $('#thirdP').addClass('color');
+                });
+
+                $('#before').click(function(){
+                    $('#thirdP').before("<span>A Boolean indicating<\span>");
+                });
+
+                $('#after').click(function(){
+                    $('#thirdP').after("<span>will begin immediately.<\span>");
+                })
+
+                $('#append').click(function(){
+                    $('#thirdP').append("<span>these are just text!!!<\span>");
+                });
+
+                $('#attr').click(function(){
+                    var link = $('img').attr('src');
+                    $('#lastP').text(link);
+                });
+
+                $('#html').click(function(){
+                   
+                    $('#lastP').html("<h1>change paragraph to heading</h1>");
+                });
+
+                $('#val').click(function(){
+                    var valueof = $('input').val();
+                    $('#lastP').text(valueof);
+                });
+
+                $('#data').click(function(){
+                    $('input').data("age", 52);
+                    var datavalue =  $('input').data("age");
+                    $('input').val(datavalue);
+                    $('#lastP').text(datavalue);
+                });
+
+            });
+        </script>
+            
+    </head>
+    <body>
+        <div class="container">
+            <div class="section">
+                <h1>Click to Hide or Show the text</h1>
+                <p id="firstParagraph">A Boolean indicating whether to place the animation in the effects queue. If false, the animation will begin immediately. </p>
+                <button id="hide">Click to Hide</button>
+                <button id="show">Click to Show</button>
+                <button id="toggle">Click to Hide or Show</button>
+            </div>
+
+            <div class="section">
+                <h1>Click to SlideDown or SlideUp the text</h1>
+                <h3 id="title">hello world</h3>
+                <p id="secondP">A Boolean indicating whether to place the animation in the effects queue. If false, the animation will begin immediately. </p>
+                <button id="slidedown">Click to SlideDown</button>
+                <button id="slideup">Click to SlideUp</button>
+                <button id="slidetoggle">Click to SlideDown or SlideUp</button>
+            </div>
+
+            <div class="section">
+                <h1>Click to fadeIn or fadeOut the boxes</h1>
+                <div class="boxes">
+                    <div class="box" id="box1"></div>
+                    <div class="box" id="box2"></div>
+                    <div class="box" id="box3"></div>
+                    <div class="box" id="box4"></div>
+                </div>               
+                
+                <button id="fadein">Click to fadeIn</button>
+                <button id="fadeout">Click to fadeOut</button>                
+            </div>
+
+            <div class="section">
+                <h1>addClass, Before, After, Append</h1>
+                <p id="thirdP">whether to place the animation in the effects queue. If false, the animation </p>
+                <button id="addclass">Click to addClass of color</button>
+                <button id="before">Click to add text before paragraph</button>
+                <button id="after">Click to add text after paragraph</button>
+                <button id="append">Click to append text</button>
+            </div>
+
+            <div class="section">
+                <h1>html, attr, val, text, data</h1>
+                <p id="lastP"></p>
+                <img src="https://pbs.twimg.com/profile_images/604644048/sign051.gif" alt="sign">
+                <input type="textarea" value="textarea">
+                <button id="html">html</button>
+                <button id="attr">attr</button>
+                <button id="val">val</button>
+                <button id="data">data</button>
+            </div>
+
+
+        </div>
+    
+    </body>
+</html>
